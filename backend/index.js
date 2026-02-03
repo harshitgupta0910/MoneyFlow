@@ -30,15 +30,15 @@ app.get('/api/health', (req, res) => {
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('✅ Connected to MongoDB');
+    console.log(' Connected to MongoDB');
     
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
+      console.log(`Server running on port ${PORT}`);
     });
   })
   .catch((error) => {
-    console.error('❌ MongoDB connection error:', error);
+    console.error(' MongoDB connection error:', error);
     process.exit(1);
   });
 
@@ -46,6 +46,10 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
+});
+
+app.get('/', (req, res) => {
+  res.send('MoneyFlow Backend is running!');
 });
 
 module.exports = app;
