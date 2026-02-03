@@ -265,7 +265,7 @@ Money Manager/
 cd backend
 npm run dev
 ```
-Server runs on http://localhost:5000
+Server runs on https://moneyflow-ny29.onrender.com
 
 ### Start Frontend
 ```powershell

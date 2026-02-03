@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const AuthContext = createContext(undefined);
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://moneyflow-ny29.onrender.com/api';
 
 // Configure axios defaults
 axios.defaults.baseURL = API_URL;

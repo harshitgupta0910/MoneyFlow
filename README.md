@@ -63,7 +63,7 @@ node seed.js
 npm run dev
 ```
 
-The backend will run on `http://localhost:5000`
+The backend will run on `https://moneyflow-ny29.onrender.com`
 
 ### Frontend Setup
 
