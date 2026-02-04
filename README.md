@@ -326,7 +326,7 @@ This project is licensed under the MIT License.
 ## 👨‍💻 Developer
 
 **Harshit Gupta**  
-Email: harshit0upta0910@gmail.com
+Email: harshitgupta0910@gmail.com
 
 ---
 
