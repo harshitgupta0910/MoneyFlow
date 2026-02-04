@@ -49,7 +49,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('MoneyFlow Backend is running!');
+  res.send('Money Manager Backend is running!');
 });
 
 module.exports = app;

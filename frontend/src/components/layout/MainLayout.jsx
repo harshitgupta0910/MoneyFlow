@@ -44,7 +44,7 @@ export function MainLayout() {
             <div className="w-8 h-8 rounded-lg primary-gradient flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">M</span>
             </div>
-            <span className="font-display text-lg font-bold">MoneyFlow</span>
+            <span className="font-display text-lg font-bold">Money Manager</span>
           </div>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>

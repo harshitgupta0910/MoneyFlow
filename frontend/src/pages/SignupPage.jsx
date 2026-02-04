@@ -67,7 +67,7 @@ export default function SignupPage() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl primary-gradient mb-4">
             <Wallet className="w-8 h-8 text-primary-foreground" />
           </div>
-          <h1 className="text-3xl font-display font-bold text-foreground">MoneyFlow</h1>
+          <h1 className="text-3xl font-display font-bold text-foreground">Money Manager</h1>
           <p className="text-muted-foreground mt-2">Create your account to start managing your finances</p>
         </div>
 

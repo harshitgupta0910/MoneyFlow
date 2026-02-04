@@ -64,7 +64,7 @@ export function Sidebar({ onAddTransaction, onCollapse }) {
                 <Wallet className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="font-display text-xl font-bold text-sidebar-foreground">
-                MoneyFlow
+                Money Manager
               </span>
             </motion.div>
           )}

@@ -34,7 +34,7 @@ export default function HomePage() {
         {/* Header */}
         <div className="text-center space-y-2">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground">
-            Welcome to <span className="text-primary">MoneyFlow</span>
+            Welcome to <span className="text-primary">Money Manager</span>
           </h1>
           <p className="text-muted-foreground text-lg">
             Track your income and expenses with ease
