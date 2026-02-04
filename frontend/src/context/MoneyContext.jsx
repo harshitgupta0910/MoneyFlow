@@ -9,18 +9,18 @@ import {
 const MoneyContext = createContext(undefined);
 
 export function MoneyProvider({ children }) {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const [transactions, setTransactions] = useState([]);
   const [accounts, setAccounts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Fetch all data on mount
+  // Fetch all data on mount and when auth changes
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && !authLoading) {
       fetchAllData();
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, authLoading]);
 
   const fetchAllData = async () => {
     setLoading(true);
