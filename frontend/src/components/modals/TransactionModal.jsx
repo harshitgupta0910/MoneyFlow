@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, DollarSign, FileText, Tag, FolderOpen, CreditCard, Clock } from 'lucide-react';
+import { X, IndianRupee, FileText, Tag, FolderOpen, CreditCard, Clock } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -119,7 +119,7 @@ export function TransactionModal({ isOpen, onClose }) {
           {/* Amount */}
           <div className="space-y-2">
             <Label htmlFor="amount" className="flex items-center gap-2">
-              <DollarSign className="w-4 h-4 text-muted-foreground" />
+              <IndianRupee className="w-4 h-4 text-muted-foreground" />
               Amount
             </Label>
             <Input

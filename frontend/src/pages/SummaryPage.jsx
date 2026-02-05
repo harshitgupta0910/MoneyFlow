@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useMoney } from '@/context/MoneyContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
-import { TrendingDown, DollarSign } from 'lucide-react';
+import { TrendingDown, IndianRupee } from 'lucide-react';
 
 export default function SummaryPage() {
   const { getCategoryData, getExpenseTotal, transactions } = useMoney();
@@ -190,7 +190,7 @@ export default function SummaryPage() {
                         className="w-10 h-10 rounded-lg flex items-center justify-center"
                         style={{ backgroundColor: COLORS[index % COLORS.length] + '20' }}
                       >
-                        <DollarSign
+                        <IndianRupee
                           className="w-5 h-5"
                           style={{ color: COLORS[index % COLORS.length] }}
                         />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, TrendingDown, DollarSign, Calendar } from 'lucide-react';
+import { TrendingUp, TrendingDown, IndianRupee, Calendar } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useMoney } from '@/context/MoneyContext';
@@ -111,7 +111,7 @@ export default function DashboardPage() {
                 </p>
               </div>
               <div className="w-14 h-14 rounded-2xl primary-gradient flex items-center justify-center">
-                <DollarSign className="w-7 h-7 text-primary-foreground" />
+                <IndianRupee className="w-7 h-7 text-primary-foreground" />
               </div>
             </div>
           </CardContent>
