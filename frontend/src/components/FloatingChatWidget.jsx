@@ -1,13 +1,19 @@
 import { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { FinanceAssistantChat } from '@/components/FinanceAssistantChat';
 import { useAuth } from '@/context/AuthContext';
 
+const PRIVATE_CHAT_ROUTES = ['/app', '/dashboard', '/transactions', '/summary', '/accounts'];
+
 export function FloatingChatWidget() {
-  const { isAuthenticated, loading } = useAuth();
+  const { isAuthenticated, loading, user } = useAuth();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
 
-  if (loading || !isAuthenticated) {
+  const isPrivateRoute = PRIVATE_CHAT_ROUTES.some((route) => location.pathname.startsWith(route));
+
+  if (loading || !isAuthenticated || !user || !isPrivateRoute) {
     return null;
   }
 
