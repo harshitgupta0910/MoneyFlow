@@ -1,12 +1,12 @@
-# Money Manager – Personal Finance & Expense Tracker
+# MoneyFlow – Personal Finance & Expense Tracker
 
-![Money Manager Screenshot](./screenshot.png)
+![MoneyFlow Screenshot](./screenshot.png)
 
 ## 📌 Overview
 
-**Money Manager** is a full-stack web application designed to help users efficiently manage their personal and business finances. Built during a **72-hour online full-stack hackathon challenge**, this application provides a comprehensive solution for tracking income, expenses, and analyzing spending patterns through an intuitive dashboard interface.
+**MoneyFlow** is a full-stack web application designed to help users efficiently manage their personal and business finances. Built during a **72-hour online full-stack hackathon challenge**, this application provides a comprehensive solution for tracking income, expenses, and analyzing spending patterns through an intuitive dashboard interface.
 
-The application addresses the real-world problem of manual finance tracking, which is often time-consuming, error-prone, and lacks actionable insights. Money Manager simplifies financial management by providing structured transaction management, visual analytics, and powerful filtering capabilities.
+The application addresses the real-world problem of manual finance tracking, which is often time-consuming, error-prone, and lacks actionable insights. MoneyFlow simplifies financial management by providing structured transaction management, visual analytics, and powerful filtering capabilities.
 
 ---
 
@@ -25,7 +25,7 @@ Users need a simple, web-based dashboard to track, filter, and analyze their fin
 
 ## ✅ Solution Description
 
-Money Manager solves these problems by providing:
+MoneyFlow solves these problems by providing:
 - **Dashboard-based visualization** – See your financial overview at a glance
 - **Structured transaction management** – Organized income and expense tracking
 - **Real-time analytics** – Instant insights into spending patterns

@@ -94,7 +94,7 @@
 ## 📁 Project Structure
 
 ```
-Money Manager/
+MoneyFlow/
 ├── frontend/                 # React Frontend
 │   ├── src/
 │   │   ├── components/

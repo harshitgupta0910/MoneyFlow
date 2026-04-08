@@ -165,7 +165,7 @@ function buildSystemPrompt(analytics) {
         .join('\n')
     : 'No accounts found.';
 
-  return `You are an AI personal finance assistant for Money Manager.
+  return `You are an AI personal finance assistant for MoneyFlow.
 Use simple, practical guidance in a friendly Hinglish style.
 Always be concise, data-backed, and avoid generic answers.
 
@@ -266,7 +266,7 @@ exports.chatAssistant = async (req, res) => {
 
     const stream = await openrouter.chat.send({
       httpReferer: process.env.FRONTEND_URL || 'https://money-flow-fawn.vercel.app',
-      appTitle: 'Money Manager Assistant',
+      appTitle: 'MoneyFlow Assistant',
       chatRequest: {
         model,
         messages,

@@ -27,7 +27,7 @@ app.use('/api/chat', chatRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', message: 'Money Manager API is running' });
+  res.json({ status: 'ok', message: 'MoneyFlow API is running' });
 });
 
 // MongoDB Connection
@@ -62,7 +62,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Money Manager Backend is running!');
+  res.send('MoneyFlow Backend is running!');
 });
 
 module.exports = app;

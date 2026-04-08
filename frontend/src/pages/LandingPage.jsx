@@ -33,7 +33,7 @@ export default function LandingPage() {
             <div className="w-10 h-10 rounded-xl primary-gradient flex items-center justify-center">
               <Wallet className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-display text-xl font-bold">Money Manager</span>
+            <span className="font-display text-xl font-bold">MoneyFlow</span>
           </div>
           <div className="flex items-center gap-3">
             <Link to="/login">
@@ -58,7 +58,7 @@ export default function LandingPage() {
               Stay in control of every rupee, every day.
             </h1>
             <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl">
-              Money Manager helps you record transactions, organize accounts, and understand your spending trends with clean dashboards and practical summaries.
+              MoneyFlow helps you record transactions, organize accounts, and understand your spending trends with clean dashboards and practical summaries.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to={isAuthenticated ? '/app' : '/signup'}>
