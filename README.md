@@ -176,7 +176,7 @@ npm install
 
 3. Create `.env` file:
 ```env
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=https://moneyflow-ny29.onrender.com/api
 ```
 
 4. Start development server:
@@ -184,7 +184,7 @@ VITE_API_URL=http://localhost:5000/api
 npm run dev
 ```
 
-The frontend will run on `http://localhost:5173`
+The frontend will run on `https://money-flow-fawn.vercel.app`
 
 ### Backend Setup
 
@@ -211,13 +211,13 @@ JWT_SECRET=your_jwt_secret_key
 npm start
 ```
 
-The backend will run on `http://localhost:5000`
+The backend will run on `https://moneyflow-ny29.onrender.com`
 
 ### Environment Variables
 
 #### Frontend (.env)
 ```
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=https://moneyflow-ny29.onrender.com/api
 ```
 
 #### Backend (.env)

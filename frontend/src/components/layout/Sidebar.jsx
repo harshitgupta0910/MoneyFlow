@@ -18,7 +18,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 
 const navItems = [
-  { path: '/', icon: Home, label: 'Home' },
+  { path: '/app', icon: Home, label: 'Home' },
   { path: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { path: '/transactions', icon: Receipt, label: 'Transactions' },
   { path: '/summary', icon: PieChart, label: 'Summary' },

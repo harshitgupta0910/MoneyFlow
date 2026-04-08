@@ -1,12 +1,13 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, TrendingUp, TrendingDown, Edit2, Trash2, X, ArrowRightLeft } from 'lucide-react';
+import { Search, Filter, TrendingUp, TrendingDown, Edit2, Trash2, X, ArrowRightLeft, Mic } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -14,6 +15,8 @@ import dayjs from 'dayjs';
 import { useMoney } from '@/context/MoneyContext';
 import { cn } from '@/lib/utils';
 import { EditTransactionModal } from '@/components/modals/EditTransactionModal';
+import { VoiceExpenseInput } from '@/components/VoiceExpenseInput';
+import { VoiceTransactionModal } from '@/components/modals/VoiceTransactionModal';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -36,6 +39,9 @@ export default function TransactionsPage() {
   const [endDate, setEndDate] = useState(undefined);
   const [editingTransaction, setEditingTransaction] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showVoiceInput, setShowVoiceInput] = useState(false);
+  const [parsedVoiceData, setParsedVoiceData] = useState(null);
+  const [showVoiceModal, setShowVoiceModal] = useState(false);
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('en-IN', {
@@ -93,6 +99,12 @@ export default function TransactionsPage() {
     setSearchQuery('');
   };
 
+  const handleVoiceParsed = (parsed) => {
+    setParsedVoiceData(parsed);
+    setShowVoiceInput(false);
+    setShowVoiceModal(true);
+  };
+
   const hasActiveFilters = Object.keys(filters).length > 0 || startDate || endDate || searchQuery;
 
   const uniqueCategories = [...new Set(categories.map(c => c.name))];
@@ -103,9 +115,13 @@ export default function TransactionsPage() {
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
+        className="flex items-center justify-between"
       >
-        <h1 className="text-3xl font-display font-bold">Transactions</h1>
-        <p className="text-muted-foreground">View and manage all your transactions</p>
+        <div>
+          <h1 className="text-3xl font-display font-bold">Transactions</h1>
+          <p className="text-muted-foreground">View and manage all your transactions</p>
+        </div>
+        
       </motion.div>
 
       {/* Search and Filters */}
@@ -417,6 +433,29 @@ export default function TransactionsPage() {
           setEditingTransaction(null);
         }}
         transaction={editingTransaction}
+      />
+
+      {/* Voice Input Dialog */}
+      <Dialog open={showVoiceInput} onOpenChange={setShowVoiceInput}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Mic className="h-5 w-5 text-purple-600" />
+              Voice Expense Entry
+            </DialogTitle>
+          </DialogHeader>
+          <VoiceExpenseInput onParsedExpense={handleVoiceParsed} />
+        </DialogContent>
+      </Dialog>
+
+      {/* Voice Transaction Confirmation Modal */}
+      <VoiceTransactionModal
+        isOpen={showVoiceModal}
+        onClose={() => {
+          setShowVoiceModal(false);
+          setParsedVoiceData(null);
+        }}
+        parsedData={parsedVoiceData}
       />
     </div>
   );

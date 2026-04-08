@@ -46,7 +46,7 @@ export default function SignupPage() {
 
     try {
       await signup(formData.name, formData.email, formData.password);
-      navigate('/');
+      navigate('/app');
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to create account');
     } finally {
