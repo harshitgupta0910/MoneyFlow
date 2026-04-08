@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { FinanceAssistantChat } from '@/components/FinanceAssistantChat';
+import { useAuth } from '@/context/AuthContext';
 
 export function FloatingChatWidget() {
+  const { isAuthenticated, loading } = useAuth();
   const [open, setOpen] = useState(false);
+
+  if (loading || !isAuthenticated) {
+    return null;
+  }
 
   return (
     <>
